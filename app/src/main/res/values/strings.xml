@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Product List</string>
+
+    <string name="card_management_title">Управление картами</string>
+    <string name="companies_loading">Подгрузка компаний</string>
+    <string name="bonuses">баллов</string>
+    <string name="cashback">Кэшбэк</string>
+    <string name="level">Уровень</string>
+    <string name="details_button_text">Подробнее</string>
+</resources>

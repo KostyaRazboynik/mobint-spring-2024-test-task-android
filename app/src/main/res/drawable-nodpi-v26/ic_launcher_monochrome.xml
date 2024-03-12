@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="13.11"
+    android:viewportHeight="8.07">
+    <group
+        android:scaleX="0.36666667"
+        android:scaleY="0.22570556"
+        android:translateX="4.1515"
+        android:translateY="3.124278">
+        <path
+            android:fillColor="@color/monochrome_icon"
+            android:pathData="M6.6 0C8.57 0 10.54 0 12.52 0c0.34 0 0.59 0.25 0.59 0.58 0 2.26 0 4.51 0 6.77 0 0.42 -0.3 0.71 -0.72 0.71 -3.85 0 -7.69 0 -11.54 0 -0.42 0 -0.86 -0.32 -0.85 -0.84C0.02 5.05 0 2.86 0 0.68 0 0.28 0.29 0 0.68 0 2.65 0 4.62 0 6.6 0Zm5.94 4.11H0.62c0 1.03 0 2.04 0 3.05 0 0.09 0.04 0.17 0.08 0.25h11.75c0.06 -0.08 0.09 -0.16 0.09 -0.25 0 -1.01 0 -2.03 0 -3.05ZM0.58 2.09h11.99c0 -0.44 0 -0.86 0 -1.29 0 -0.09 -0.04 -0.19 -0.15 -0.24H0.71c-0.06 0.08 -0.13 0.15 -0.13 0.27 0 0.41 0 0.82 0 1.25Z" />
+        <path
+            android:fillColor="@color/monochrome_icon"
+            android:pathData="M6.69 6.68h-3.38c-0.03 -0.15 -0.01 -0.31 -0.01 -0.47h3.39v0.47Z" />
+        <path
+            android:fillColor="@color/monochrome_icon"
+            android:pathData="M1.15 6.67v-0.46h1.48v0.46h-1.48Z" />
+    </group>
+</vector>
