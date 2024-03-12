@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#1A1A1A</color>
+    <color name="white">#FFFFFF</color>
+    <color name="red">#FF3044</color>
+    <color name="blue">#2688eb</color>
+    <color name="lightGrey">#EFEFEF</color>
+
+    <color name="cardBackgroundColor">@color/white</color>
+    <color name="highlightTextColor">@color/black</color>
+    <color name="textColor">@color/lightGrey</color>
+    <color name="mainColor">@color/blue</color>
+    <color name="accentColor">@color/red</color>
+    <color name="backgroundColor">@color/lightGrey</color>
+    
+    <color name="monochrome_icon">@color/white</color>
+</resources>

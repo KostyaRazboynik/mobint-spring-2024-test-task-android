@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/base_element_margin_medium"
+    android:background="@drawable/company_card_background"
+    android:padding="@dimen/base_element_margin_medium">
+
+    <TextView
+        android:id="@+id/companyName"
+        style="@style/CompaniesListText.1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bonus Money"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/companyIcon"
+        android:layout_width="@dimen/logoSize"
+        android:layout_height="@dimen/logoSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.divider.MaterialDivider
+        android:id="@+id/first_divider_line"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/base_element_margin_small"
+        app:dividerThickness="0.5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/companyIcon" />
+
+    <TextView
+        android:id="@+id/bonusesAmount"
+        style="@style/CompaniesListText.0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/base_element_margin_medium"
+        android:text="200"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/first_divider_line" />
+
+    <TextView
+        style="@style/CompaniesListText.Light.2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/base_element_margin_small"
+        android:layout_marginTop="@dimen/base_element_margin_medium"
+        android:text="@string/bonuses"
+        app:layout_constraintBottom_toBottomOf="@+id/bonusesAmount"
+        app:layout_constraintStart_toEndOf="@+id/bonusesAmount" />
+
+    <TextView
+        android:id="@+id/cashbackTitle"
+        style="@style/CompaniesListText.Light.4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/base_element_margin_medium"
+        android:text="@string/cashback"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bonusesAmount" />
+
+    <TextView
+        android:id="@+id/cardLevelTitle"
+        style="@style/CompaniesListText.Light.4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="38dp"
+        android:layout_marginTop="@dimen/base_element_margin_medium"
+
+        android:text="@string/level"
+        app:layout_constraintStart_toEndOf="@+id/cashbackTitle"
+        app:layout_constraintTop_toBottomOf="@+id/bonusesAmount" />
+
+    <TextView
+        android:id="@+id/cashbackAmount"
+        style="@style/CompaniesListText.3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/base_element_margin_small"
+        android:text="1 %"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cashbackTitle" />
+
+    <TextView
+        android:id="@+id/cardLevel"
+        style="@style/CompaniesListText.3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/base_element_margin_small"
+        android:text="@string/level"
+        app:layout_constraintStart_toStartOf="@+id/cardLevelTitle"
+        app:layout_constraintTop_toBottomOf="@+id/cardLevelTitle" />
+
+    <com.google.android.material.divider.MaterialDivider
+        android:id="@+id/second_divider_line"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/base_element_margin_small"
+        app:dividerThickness="0.5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cashbackAmount" />
+
+    <ImageView
+        android:id="@+id/cardVisibilityButton"
+        android:layout_width="@dimen/iconSize"
+        android:layout_height="@dimen/iconSize"
+        android:layout_marginStart="@dimen/base_element_margin_medium"
+        android:layout_marginTop="@dimen/base_element_margin_medium"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:importantForAccessibility="no"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/second_divider_line"
+        app:srcCompat="@drawable/ic_eye"
+        app:tint="@color/blue" />
+
+    <ImageView
+        android:id="@+id/deleteCardButton"
+        android:layout_width="@dimen/iconSize"
+        android:layout_height="@dimen/iconSize"
+        android:layout_marginTop="@dimen/base_element_margin_medium"
+        android:importantForAccessibility="no"
+        app:layout_constraintEnd_toStartOf="@+id/detailsButton"
+        app:layout_constraintStart_toEndOf="@+id/cardVisibilityButton"
+        app:layout_constraintTop_toBottomOf="@+id/second_divider_line"
+        app:srcCompat="@drawable/ic_trash"
+        app:tint="@color/red" />
+
+    <Button
+        android:id="@+id/detailsButton"
+        style="@style/DetailsButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/base_element_margin_small"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/second_divider_line" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
