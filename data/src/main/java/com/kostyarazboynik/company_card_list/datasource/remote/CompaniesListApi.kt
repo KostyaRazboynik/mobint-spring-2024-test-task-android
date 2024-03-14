@@ -32,4 +32,11 @@ interface CompaniesListApi {
         @Header("TOKEN") token: String,
         @Body params: GetAllCompaniesRequestParams,
     ): Response<CompaniesListResponse>
+
+
+    companion object {
+        const val TOKEN = "123"
+        const val DEFAULT_OFFSET = 0
+        const val DEFAULT_LIMIT = 10
+    }
 }

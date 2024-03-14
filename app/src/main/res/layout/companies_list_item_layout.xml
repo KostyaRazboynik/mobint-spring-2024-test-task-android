@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/companyCard"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginTop="@dimen/base_element_margin_medium"
+    android:layout_marginHorizontal="@dimen/margin1"
+    android:layout_marginTop="@dimen/margin1"
     android:background="@drawable/company_card_background"
-    android:padding="@dimen/base_element_margin_medium">
+    android:padding="@dimen/margin1">
 
     <TextView
         android:id="@+id/companyName"
@@ -18,8 +20,8 @@
 
     <ImageView
         android:id="@+id/companyIcon"
-        android:layout_width="@dimen/logoSize"
-        android:layout_height="@dimen/logoSize"
+        style="@style/CompanyIcon"
+        android:importantForAccessibility="no"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -27,8 +29,8 @@
         android:id="@+id/first_divider_line"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/base_element_margin_small"
-        app:dividerThickness="0.5dp"
+        android:layout_marginTop="@dimen/margin2"
+        app:dividerThickness="@dimen/divider_thickness"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/companyIcon" />
@@ -38,17 +40,17 @@
         style="@style/CompaniesListText.0"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/base_element_margin_medium"
+        android:layout_marginTop="@dimen/margin1"
         android:text="200"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/first_divider_line" />
 
     <TextView
+        android:id="@+id/bonusesTitle"
         style="@style/CompaniesListText.Light.2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/base_element_margin_small"
-        android:layout_marginTop="@dimen/base_element_margin_medium"
+        android:layout_marginStart="@dimen/margin2"
         android:text="@string/bonuses"
         app:layout_constraintBottom_toBottomOf="@+id/bonusesAmount"
         app:layout_constraintStart_toEndOf="@+id/bonusesAmount" />
@@ -58,7 +60,7 @@
         style="@style/CompaniesListText.Light.4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/base_element_margin_medium"
+        android:layout_marginTop="@dimen/margin1"
         android:text="@string/cashback"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bonusesAmount" />
@@ -68,9 +70,8 @@
         style="@style/CompaniesListText.Light.4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="38dp"
-        android:layout_marginTop="@dimen/base_element_margin_medium"
-
+        android:layout_marginStart="@dimen/margin3"
+        android:layout_marginTop="@dimen/margin1"
         android:text="@string/level"
         app:layout_constraintStart_toEndOf="@+id/cashbackTitle"
         app:layout_constraintTop_toBottomOf="@+id/bonusesAmount" />
@@ -80,7 +81,7 @@
         style="@style/CompaniesListText.3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/base_element_margin_small"
+        android:layout_marginTop="@dimen/margin2"
         android:text="1 %"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cashbackTitle" />
@@ -90,7 +91,7 @@
         style="@style/CompaniesListText.3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/base_element_margin_small"
+        android:layout_marginTop="@dimen/margin2"
         android:text="Уровень"
         app:layout_constraintStart_toStartOf="@+id/cardLevelTitle"
         app:layout_constraintTop_toBottomOf="@+id/cardLevelTitle" />
@@ -99,8 +100,8 @@
         android:id="@+id/second_divider_line"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/base_element_margin_small"
-        app:dividerThickness="0.5dp"
+        android:layout_marginTop="@dimen/margin2"
+        app:dividerThickness="@dimen/divider_thickness"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cashbackAmount" />
@@ -109,11 +110,10 @@
         android:id="@+id/cardVisibilityButton"
         android:layout_width="@dimen/iconSize"
         android:layout_height="@dimen/iconSize"
-        android:layout_marginStart="@dimen/base_element_margin_medium"
-        android:layout_marginTop="@dimen/base_element_margin_medium"
-        android:background="?attr/selectableItemBackgroundBorderless"
+        android:layout_marginTop="@dimen/margin1"
+        android:layout_marginEnd="@dimen/margin3"
         android:importantForAccessibility="no"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/deleteCardButton"
         app:layout_constraintTop_toBottomOf="@+id/second_divider_line"
         app:srcCompat="@drawable/ic_eye"
         app:tint="@color/blue" />
@@ -122,10 +122,10 @@
         android:id="@+id/deleteCardButton"
         android:layout_width="@dimen/iconSize"
         android:layout_height="@dimen/iconSize"
-        android:layout_marginTop="@dimen/base_element_margin_medium"
+        android:layout_marginTop="@dimen/margin1"
+        android:layout_marginEnd="@dimen/margin3"
         android:importantForAccessibility="no"
         app:layout_constraintEnd_toStartOf="@+id/detailsButton"
-        app:layout_constraintStart_toEndOf="@+id/cardVisibilityButton"
         app:layout_constraintTop_toBottomOf="@+id/second_divider_line"
         app:srcCompat="@drawable/ic_trash"
         app:tint="@color/red" />
@@ -135,7 +135,7 @@
         style="@style/DetailsButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/base_element_margin_small"
+        android:layout_marginTop="@dimen/margin2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/second_divider_line" />
 

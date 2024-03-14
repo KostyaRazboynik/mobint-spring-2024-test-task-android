@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <style name="CompaniesListText">
         <item name="fontFamily">@font/segoe</item>
-        <item name="android:textColor">@color/black</item>
+        <item name="android:textColor">@color/highlightTextColor</item>
         <item name="android:gravity">start</item>
         <item name="android:ellipsize">end</item>
     </style>
@@ -20,7 +21,7 @@
     </style>
 
     <style name="CompaniesListText.Light">
-        <item name="android:textColor">@color/lightGrey</item>
+        <item name="android:textColor">@color/textColor</item>
     </style>
 
     <style name="CompaniesListText.Light.2">
@@ -32,7 +33,7 @@
     </style>
 
     <style name="CompaniesListText.Blue">
-        <item name="android:textColor">@color/blue</item>
+        <item name="android:textColor">@color/mainColor</item>
     </style>
 
     <style name="CompaniesListText.Blue.1">
@@ -48,9 +49,14 @@
     </style>
 
     <style name="DetailsButton" parent="CompaniesListText.Blue.3">
-        <item name="backgroundTint">@color/lightGrey</item>
+        <item name="backgroundTint">@color/backgroundColor</item>
         <item name="android:background">@drawable/details_button_background</item>
         <item name="android:gravity">center</item>
         <item name="android:text">@string/details_button_text</item>
+    </style>
+
+    <style name="CompanyIcon">
+        <item name="android:layout_width">@dimen/logoSize</item>
+        <item name="android:layout_height">@dimen/logoSize</item>
     </style>
 </resources>

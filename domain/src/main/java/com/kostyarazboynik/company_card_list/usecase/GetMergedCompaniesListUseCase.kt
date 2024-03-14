@@ -7,7 +7,6 @@ import com.kostyarazboynik.company_card_list.model.UiState
 import com.kostyarazboynik.company_card_list.repository.CompaniesListLocalRepository
 import com.kostyarazboynik.company_card_list.repository.CompaniesListRemoteRepository
 import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.flow
 
 class GetMergedCompaniesListUseCase(
@@ -24,7 +23,13 @@ class GetMergedCompaniesListUseCase(
         ).collect { state ->
             when (state) {
                 DataState.Initial -> emit(UiState.Initial)
-                is DataState.Exception -> emit(UiState.Error(state.cause.message.toString()))
+                is DataState.Exception -> emit(
+                    UiState.Error(
+                        state.cause.message.toString(),
+                        state.code
+                    )
+                )
+
                 is DataState.Result -> {
                     companiesListLocalRepository.updateLocalDatabase(state.data)
                     Logger.d(TAG, "list=${state.data}")
@@ -49,8 +54,8 @@ class GetMergedCompaniesListUseCase(
                     )
                 )
 
-                is DataState.Initial,
-                is DataState.Exception -> emit(DataState.Result(localCompanies))
+                is DataState.Initial -> emit(DataState.Result(localCompanies))
+                is DataState.Exception -> emit(remoteCompanies)
             }
         }
     }

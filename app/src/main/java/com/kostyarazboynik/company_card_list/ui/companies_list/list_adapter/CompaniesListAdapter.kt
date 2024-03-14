@@ -17,14 +17,15 @@ class CompaniesListAdapter(
                 LayoutInflater.from(parent.context),
                 parent,
                 false
-            )
+            ),
+            parent.context
         )
 
     override fun onBindViewHolder(holder: CompaniesListViewHolder, position: Int) {
         holder.bind(getItem(position))
 
-        if (position == itemCount - 3) {
-            // TODO loadNewCompaniesCallBack() with animation
+        if (position == itemCount - 1) {
+            loadNewCompaniesCallBack()
         }
     }
 

@@ -31,7 +31,7 @@ abstract class ScopeComponentProvider<C : Any> : ComponentProvider<C> {
         createComponent: (CoroutineScope) -> C
     ) {
         val scope = CoroutineScope(
-            SupervisorJob() +
+           SupervisorJob() +
                 CoroutineName(coroutineScopeName)
         )
         val component = createComponent(scope)

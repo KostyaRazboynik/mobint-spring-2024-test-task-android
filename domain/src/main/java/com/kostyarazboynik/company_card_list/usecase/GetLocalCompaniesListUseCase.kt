@@ -15,7 +15,13 @@ class GetLocalCompaniesListUseCase(
         companiesListLocalRepository.getLocalCompaniesListFlow().collect { state ->
             when (state) {
                 DataState.Initial -> emit(UiState.Initial)
-                is DataState.Exception -> emit(UiState.Error(state.cause.message.toString()))
+                is DataState.Exception -> emit(
+                    UiState.Error(
+                        state.cause.message.toString(),
+                        state.code
+                    )
+                )
+
                 is DataState.Result -> {
                     emit(UiState.Success(state.data))
                 }

@@ -7,4 +7,8 @@
     <string name="cashback">Кэшбэк</string>
     <string name="level">Уровень</string>
     <string name="details_button_text">Подробнее</string>
+
+    <string name="error_401">Oшибка авторизации</string>
+    <string name="error_500">Все упало</string>
+    <string name="error_unknown">Неизвестная ошибка</string>
 </resources>

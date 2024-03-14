@@ -53,6 +53,7 @@ dependencies {
     implementation(libs.androidx.appcompat)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
+    implementation(libs.androidx.paggin)
     implementation(libs.androidx.recyclerview)
     implementation(libs.androidx.swiperefreshlayout)
     implementation(libs.material)
@@ -61,8 +62,6 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
 
     // view binding
-    //implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.7.0")
-    //implementation("androidx.activity:activity-ktx:1.8.2")
     implementation(libs.androidx.fragment.ktx)
     implementation(libs.viewbinding.property.delegate.full)
 
@@ -77,4 +76,7 @@ dependencies {
     implementation(libs.gson)
     implementation(libs.okhttp)
     implementation(libs.okhttp.logging.interceptor)
+
+    //coil image loader
+    implementation(libs.io.coil)
 }

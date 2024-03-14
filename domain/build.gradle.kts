@@ -39,6 +39,7 @@ dependencies {
     implementation(project(":common"))
 
     implementation(libs.androidx.appcompat)
+    implementation(libs.androidx.paggin)
 
     // dagger dependency injection pattern
     api(libs.dagger.android)
