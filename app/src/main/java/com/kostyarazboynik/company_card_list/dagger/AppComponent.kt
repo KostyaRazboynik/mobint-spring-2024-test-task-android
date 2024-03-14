@@ -4,11 +4,13 @@ import android.app.Application
 import android.content.Context
 import com.kostyarazboynik.company_card_list.CompaniesListApp
 import com.kostyarazboynik.company_card_list.MainActivity
-import com.kostyarazboynik.company_card_list.module.network.NetworkModule
+import com.kostyarazboynik.company_card_list.dagger.module.datasource.DataBaseModule
+import com.kostyarazboynik.company_card_list.dagger.module.datasource.DataSourceModule
+import com.kostyarazboynik.company_card_list.dagger.module.network.NetworkModule
+import com.kostyarazboynik.company_card_list.dagger.module.repository.RepositoryModule
 import com.kostyarazboynik.company_card_list.module.UseCasesModule
-import com.kostyarazboynik.company_card_list.module.repository.RepositoryModule
-import com.kostyarazboynik.company_card_list.ui.dagger.UIComponent
 import com.kostyarazboynik.company_card_list.ui.companies_list.CompaniesListFragmentViewModel
+import com.kostyarazboynik.company_card_list.ui.dagger.UIComponent
 import dagger.BindsInstance
 import dagger.Component
 import kotlinx.coroutines.CoroutineScope
@@ -17,8 +19,10 @@ import javax.inject.Singleton
 @Singleton
 @Component(
     modules = [
-        RepositoryModule::class,
+        DataBaseModule::class,
+        DataSourceModule::class,
         NetworkModule::class,
+        RepositoryModule::class,
         UseCasesModule::class,
     ]
 )

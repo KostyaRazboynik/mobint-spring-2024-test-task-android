@@ -1,4 +1,4 @@
-package com.kostyarazboynik.company_card_list.module.network
+package com.kostyarazboynik.company_card_list.dagger.module.network
 
 import com.kostyarazboynik.company_card_list.datasource.remote.CompaniesListApi
 import dagger.Module
@@ -41,6 +41,6 @@ object NetworkModule {
             level = HttpLoggingInterceptor.Level.BODY
         }
 
-    private const val BASE_URL = "https://dummyjson.com/"
+    private const val BASE_URL = "http://devapp.bonusmoney.pro/mobileapp/"
     private const val RETROFIT_TIMEOUT: Long = 10
 }

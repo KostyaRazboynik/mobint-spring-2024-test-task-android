@@ -4,6 +4,6 @@ import com.google.gson.annotations.SerializedName
 import com.kostyarazboynik.company_card_list.model.CompanyCard
 
 data class CompaniesListResponse(
-    @SerializedName("products")
-    val list: List<CompanyCard>
+    @SerializedName("companies")
+    val companies: List<CompanyCard>
 )

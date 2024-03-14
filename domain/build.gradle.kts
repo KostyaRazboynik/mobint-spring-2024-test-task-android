@@ -44,4 +44,7 @@ dependencies {
     api(libs.dagger.android)
     kapt(libs.dagger.compiler)
     annotationProcessor(libs.dagger.android.processor)
+
+    // gson
+    implementation(libs.gson)
 }

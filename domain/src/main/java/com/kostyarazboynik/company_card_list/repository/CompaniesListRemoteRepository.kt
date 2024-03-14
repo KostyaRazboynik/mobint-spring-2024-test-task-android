@@ -5,8 +5,5 @@ import com.kostyarazboynik.company_card_list.model.DataState
 import kotlinx.coroutines.flow.Flow
 
 interface CompaniesListRemoteRepository {
-    suspend fun getRemoteCompaniesListFlow(
-        limit: Int,
-        skip: Int,
-    ): Flow<DataState<List<CompanyCard>>>
+    suspend fun getRemoteCompaniesListFlow(): Flow<DataState<List<CompanyCard>>>
 }

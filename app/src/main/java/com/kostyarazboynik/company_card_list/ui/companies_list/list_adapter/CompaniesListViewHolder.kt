@@ -10,6 +10,12 @@ class CompaniesListViewHolder(
 
     fun bind(companyCard: CompanyCard) {
         binding.apply {
+            companyName.text = companyCard.mobileAppDashboard.companyName
+            // TODO parse company.icon
+            bonusesAmount.text = companyCard.customerMarkParameters.mark.toString()
+            cashbackAmount.text = "${companyCard.customerMarkParameters.loyaltyLevel.number}%"
+            cardLevel.text = companyCard.customerMarkParameters.loyaltyLevel.name
+            // TODO parse colors
 
         }
     }

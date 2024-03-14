@@ -37,20 +37,39 @@ class CompaniesListFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         setUpRecyclerView()
-        loadData()
+        setUpSwipeRefreshListener()
+        setUpData()
+        viewModel.loadLocalData()
         updateUI()
     }
 
     private fun setUpRecyclerView() {
         binding.recyclerView.apply {
             adapter = CompaniesListAdapter(
-                loadNewProductsCallBack = { loadData() }
+                loadNewCompaniesCallBack = { viewModel.loadRemoteData() }
             )
             layoutManager = LinearLayoutManager(context)
         }
     }
 
-    private fun loadData() = viewModel.loadData()
+    private fun setUpSwipeRefreshListener() {
+        binding.swipeRefreshLayout.apply {
+            setOnRefreshListener {
+                viewModel.loadRemoteData()
+                isRefreshing = false
+            }
+        }
+    }
+
+    private fun setUpData() {
+        if (viewModel.isFirstInitializing()) {
+            // TODO show UI
+            viewModel.setInitialized()
+            viewModel.loadRemoteData()
+        } else {
+            viewModel.loadLocalData()
+        }
+    }
 
     private fun updateUI() =
         viewModel.viewModelScope.launchNamed("$TAG-viewModelScope-updateUI") {
