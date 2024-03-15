@@ -18,12 +18,22 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/companyIcon"
-        style="@style/CompanyIcon"
-        android:importantForAccessibility="no"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/companyIconContainer"
+        android:layout_width="@dimen/logoSize"
+        android:layout_height="@dimen/logoSize"
+        app:cardCornerRadius="@dimen/logoSize"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent" >
+
+        <ImageView
+            android:id="@+id/companyIcon"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@mipmap/ic_launcher"
+            android:importantForAccessibility="no" />
+
+    </androidx.cardview.widget.CardView>
 
     <com.google.android.material.divider.MaterialDivider
         android:id="@+id/first_divider_line"
@@ -33,7 +43,7 @@
         app:dividerThickness="@dimen/divider_thickness"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/companyIcon" />
+        app:layout_constraintTop_toBottomOf="@+id/companyIconContainer" />
 
     <TextView
         android:id="@+id/bonusesAmount"
